@@ -12,7 +12,7 @@ client.connect();
 app.get('/users', (req, res)=>{
   client.query(`Select * from users`, (err, result)=>{
       if(!err){
-          res.send(result.rows);
+          res.send(result.rows[0]["name"]);
 
       }
   });
